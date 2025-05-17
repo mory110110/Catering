@@ -15,4 +15,4 @@ function navToggle() { // creates a new function named navToggle
   } else {                          // if it doesn't,
     x.className = "topnav";         // set class to .topnav
   } //closes if-else
-} //closes function
+} //closes function!
