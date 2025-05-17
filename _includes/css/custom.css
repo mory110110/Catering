@@ -1,0 +1,444 @@
+:root {
+  --dark: #13111f;
+  --midark: #515153;
+  --dim: #494848;
+  --color: #e5990c;
+  --mid: #ADAAAA;
+  --light: #C9C3C3;
+  --milight: #E5E1E1;
+  --white: #FAF3F3;
+  --std: all 250ms ease-in-out;
+  --long: all 500ms ease-in-out;
+}
+
+body
+{
+  color: var(--midark);
+  background-color:var(--white);
+  font-family: 'RobotoDraft', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+*
+{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*------------------
+--  Nav Styles  --
+------------------*/
+.topnav { 
+    overflow: hidden;
+    background-color: var(--dark);
+    padding: 1em 4rem;
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+a.logo {
+  margin-right: auto;
+  opacity: .85;
+  }
+a.logo:hover {
+  opacity: 1;
+  }
+a.logo > img {
+  width: 122px;
+  height: 46px;
+  }
+  
+a.nav-item {
+  text-decoration: none; 
+  color: var(--mid);
+  cursor: pointer;
+  transition: var(--std);
+  }
+a:hover {
+  color: var(--color);
+  cursor: pointer; 
+  }
+.nav-item.trigram {
+  display: none; /*-- hides trigram (hamburger menu button) by default --*/
+  position: absolute;
+  right: 2em;
+  top: 1.5em;
+  text-decoration: none; /*-- removes underline --*/
+  font-size: 2rem; /*-- makes much larger than normal text--*/
+  }
+  
+
+
+.nav-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
+/*-- Mobile Nav Queries --*/
+/*--At screens BELOW 768px, hides nav menu items and displays trigram --*/
+/* @media screen and (max-width: 767px) {
+  .topnav a, .topnav span {display: none;}
+  .topnav a.trigram {display:inherit; position:absolute; right:4%; font-size:2em; padding: .25em; background:var(--prime);}
+} */
+/*-- At screens BELOW 768px,  rules for mobile nav--*/
+@media screen and (max-width: 767px) {
+  .nav-logoo {display: block;}
+  /* .topnav .nav-bar {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+} */
+ 
+  #logoBar {display: block;}
+  #linksBar {display: block;}
+  #main-nav {display: block;}
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .trigram {
+    position: absolute;
+    right: 2em;
+    top: 1.5em;
+  }
+  .topnav.responsive .nav-item {
+    float: none;
+    display: block;
+    text-align: center;
+    /* background-color: #383838; */
+  }
+  .topnav.responsive {display: block;}
+  .topnav.responsive {align-items: center;} /*-- vertically centers--*/
+  .topnav.responsive a, .topnav.responsive span {display:inherit;} /*-- makes menu items visible --*/
+  .topnav.responsive a:first-child {margin-top:0.1em;} /*-- adds space above first item --*/
+  .topnav.responsive a:not(:last-child) {display:inherit; padding-top:1em;} /*-- makes items visible (but not the trigram) and adds space above them--*/
+  .topnav.responsive a:last-child {display:inherit; padding-top:1em;} /*-- makes items visible (but not the trigram) and adds space above them--*/
+  .topnav.responsive a.more {margin-bottom: 1em;} /*-- adds margin below bottom item --*/
+  .topnav.responsive a.trigram {visibility:hidden; transition:none;} /*-- hides trigram when open --*/
+  .topnav.responsive a.trigram:after {content:'\000D7'; visibility:visible; text-indent: -.5em; position: absolute;    right: 0em;    top: 0.5em;} /*-- replaces trigram sign with x-sign on mobile. --*/
+}
+/*-- At screens 768px and ABOVE, set normal menu defaults --*/
+@media screen and (min-width: 768px) {
+  .topnav {display: flex; flex-direction: row; justify-content: space-between;}
+}
+
+
+
+.site-footer {
+  color: var(--light);
+  background-color: var(--dark);
+  padding: 1em 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h5
+{
+  margin:0px;
+  font-size:1.4em;
+  font-weight:700;
+}
+
+p
+{
+  font-size:12px;
+}
+
+.center
+{
+  height:35vh;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* End Non-Essential  */
+
+.property-card
+{
+  /* height:18em;
+  width:24em; */
+  /* min-width: 22rem; */
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  position:relative;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius:16px;
+  overflow:hidden;
+    -webkit-box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+    box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  align-items: center;
+}
+/* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+
+/* Top Half of card, image. */
+
+/* .property-image
+{
+  height:6em;
+  width:14em;
+  padding:1em 2em;
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url('https://cdn.photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+} */
+
+.property-image img
+{
+    /* height:12em;
+    width:16em; */
+    /* padding:1em 2em; */
+    /* position:Absolute; */
+    /* top:0px; */
+    -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    /* background-image:url('https://cdn.photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg'); */
+    /* background-size:cover;
+    background-repeat:no-repeat; */
+  }
+
+/* Bottom Card Section */
+
+.property-description
+{
+  background-color: #FAFAFC;
+  height:6em;
+  /* width:24em; */
+  position:absolute;
+  bottom:0em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 0.5em 1em;
+  text-align:center;
+}
+
+/* Social Icons */
+
+.property-social-icons
+{
+  width:1em;
+  height:1em;
+  background-color:black;
+  position:absolute;
+  bottom:1em;
+  left:1em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Property Cards Hover States */
+
+.property-card:hover .property-description
+{
+  height:0em;
+  padding:0px 1em;
+}
+.property-card:hover .property-image
+{
+  /* height:28em; */
+  scale:1.5;
+}
+
+.property-card:hover .property-social-icons
+{
+  background-color:white;
+}
+
+.property-card:hover .property-social-icons:hover
+{
+  background-color:var(--color);
+  cursor:pointer;
+}
+
+
+main {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  margin: 2rem 2vw;
+}
+aside {
+  margin: 0 2vw;
+  color: var(--midark);
+}
+aside p {
+  column-count: 1;
+}
+
+
+
+
+
+  /*-- Styles for slideshow --*/
+  .slideshow {
+    position: relative; /*-- this allows children to be position absolutely --*/
+    padding: 0;
+  }
+  .slide {
+    padding: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
+  .slide img {
+    box-shadow: 0 1px 8px rgba(0,0,0,.5);
+  }
+  .figcaption {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--white);
+    text-shadow: -1px -1px 0px rgba(0,0,0,0.8),
+                 1px -1px 0px rgba(0,0,0,0.8),
+                 -1px 1px 0px rgba(0,0,0,0.8),
+                 1px 1px 0px rgba(0,0,0,0.8);
+  }
+  .figcaption h1 {
+    font-size: 7.2rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 0;
+  }
+  .figcaption p {
+    font-size: 3.6rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+  }
+  .prev {
+    cursor: pointer; /*-- changes hover cursor to the hand --*/
+    padding: 5rem 3rem;
+    position: absolute; /*-- positions arrows absolutely--*/
+    top: 50%; /*-- positions arrows half the height of parent from top --*/
+    left: 0rem;
+    transform: translateY(-50%);
+    width: auto; /*-- matches width of parent --*/
+    font-size: 200%;
+    transition: var(--std);
+    border-radius: 0 2rem 2rem 0; /*-- slightly rounds inside borders --*/
+    user-select: none; /*-- prevents users from selecting buttons --*/
+  }
+  .next {
+    right: 0rem; /*-- positions next arrow hard right --*/
+    border-radius: 2rem 0 0 2rem; /*-- rounds the outside borders --*/
+    cursor: pointer; /*-- changes hover cursor to the hand --*/
+    padding: 5rem 3rem;
+    position: absolute; /*-- positions arrows absolutely--*/
+    top: 50%; /*-- positions arrows half the height of parent from top --*/
+    transform: translateY(-50%);
+    width: auto; /*-- matches width of parent --*/
+    font-size: 250%;
+    transition: var(--std);
+    user-select: none; /*-- prevents users from selecting buttons --*/
+  }
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.6); /*-- gives a background for contrast on hover --*/
+  }
+  button {
+    background: none;
+    border: 0;
+    transition: var(--std);
+  }
+  button:hover {
+    cursor: pointer;
+  }
+  .dot-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    bottom: 3.2rem;
+  }
+  .dot {
+    background-color: rgba(255,255,255,.6);
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-left: 1.4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--std);
+  }
+  .dot:hover {
+    background-color: rgba(255,255,255,1);
+  }
+  .dot:first-child {
+    margin-left: 0;
+  } 
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------
+---- Media Queries ----
+---------------------*/
+@media screen and (max-width: 767px) {/*--At screens BELOW 768px, hides nav menu items and displays trigram --*/
+    .topnav a:not(a.logo, a.trigram) {display: none;}
+    .topnav a.trigram {
+      display:inherit;
+      justify-self: end;
+      transform:scale(2.5);
+    }
+  }
+  /*-- Now for the min-width queries --*/
+  @media screen and (min-width: 550px) {
+    main{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media screen and (min-width: 768px) {
+    main{grid-template-columns:repeat(3, 1fr);}
+    aside p {column-count: 2;}
+  }
+  @media screen and (min-width: 1080px) {
+    main{grid-template-columns:repeat(4, 1fr);}
+  }
